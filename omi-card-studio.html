@@ -510,6 +510,9 @@
 .qf-leave-actions button{width:100%;min-height:52px;font-size:15px;font-weight:600;border-radius:12px;cursor:pointer;border:1px solid #b8c7ba;background:#fff;color:var(--green)}
 .qf-leave-actions button.qf-primary{background:var(--green);color:#fff;border-color:var(--green)}
 .qf-leave-danger{color:#b03030!important;border-color:#e0b8b8!important}
+.qf-done-icon{font-size:32px;margin:0 0 8px;line-height:1}
+.qf-done-preview-btn{display:none}
+@media(max-width:800px){.qf-done-preview-btn{display:block}}
 </style>
 
 <div id="qfModal" class="qf-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="qfModalTitle">
@@ -669,6 +672,19 @@
       <button type="button" id="qfLeaveBack" class="qf-primary">回到填寫</button>
       <button type="button" id="qfLeaveCommit">把目前已填的資料寫入並離開</button>
       <button type="button" id="qfLeaveDiscard" class="qf-leave-danger">捨棄並離開</button>
+    </div>
+  </div>
+</div>
+
+<div id="qfDoneOverlay" class="qf-leave-overlay" hidden role="dialog" aria-modal="true">
+  <div class="qf-dialog">
+    <p class="qf-done-icon">✦</p>
+    <p class="qf-leave-title" id="qfDoneTitle">打卡完成！</p>
+    <p class="hint" style="margin:0 0 4px">資料已寫入，做得好。</p>
+    <div class="qf-leave-actions">
+      <button type="button" id="qfDoneDownload" class="qf-primary">下載圖片</button>
+      <button type="button" id="qfDonePreview" class="qf-done-preview-btn">去預覽圖片</button>
+      <button type="button" id="qfDoneClose">離開</button>
     </div>
   </div>
 </div><div id="p5Blocker" class="p5-blocker" role="alert">正在安全載入本機資料…</div><div id="p5FirstNotice" class="p5-notice-overlay" hidden><div class="p5-dialog" role="dialog" aria-modal="true" aria-labelledby="p5NoticeTitle"><h2 id="p5NoticeTitle">小卡資料儲存在這台裝置上</h2><p>Challenge 設定、小卡編輯內容與照片預設只保存在目前瀏覽器，不會自動同步。清除網站資料、使用無痕模式或更換裝置，可能使這些內容無法恢復。</p><p>請定期從「挑戰設定 → 資料備份與還原」匯出 JSON 備份。PNG 是圖片，無法還原編輯內容。</p><button type="button" class="primary" id="p5NoticeOk">我了解，開始使用</button></div></div><script>
@@ -3144,6 +3160,34 @@ OmiPhase5.init();
     qfTempData.reflection = document.getElementById('qfReflection').value;
     commitAllQF();
     closeQF5();
+    // Show completion modal
+    const dateVal = document.querySelector('[data-key="date"]')?.value || '';
+    const todayVal = typeof localDate !== 'undefined' ? localDate : new Date().toISOString().slice(0,10);
+    const isToday = dateVal === todayVal;
+    let label;
+    if(isToday){
+      label = '今天的打卡完成了！';
+    } else if(dateVal){
+      const [y,m,d] = dateVal.split('-');
+      label = `${m}/${d} 的打卡完成了！`;
+    } else {
+      label = '打卡完成！';
+    }
+    document.getElementById('qfDoneTitle').textContent = label;
+    document.getElementById('qfDoneOverlay').hidden = false;
+  });
+
+  document.getElementById('qfDoneClose').addEventListener('click', function(){
+    document.getElementById('qfDoneOverlay').hidden = true;
+  });
+  document.getElementById('qfDoneDownload').addEventListener('click', function(){
+    document.getElementById('qfDoneOverlay').hidden = true;
+    window.OmiPhase5?.exportCard('daily');
+  });
+  document.getElementById('qfDonePreview').addEventListener('click', function(){
+    document.getElementById('qfDoneOverlay').hidden = true;
+    const previewBtn = document.getElementById('p5PreviewView');
+    if(previewBtn) previewBtn.click();
   });
 
 })();
