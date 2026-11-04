@@ -150,6 +150,7 @@
 @media(max-width:800px){.p5-view-toggle{display:flex}body[data-p5-view=edit] #previewPanel{display:none}body[data-p5-view=preview] #editorPanel{display:none}.layout{display:block;max-width:650px;margin:0 auto;padding:10px}.panel{max-height:none}.preview{padding:12px 0}#p5PreviewStage{}#p5CanvasGroup{max-width:540px;margin:0 auto}.v55-day-bar{margin-bottom:12px}}
 
 
+/* v5.8 — 快速填寫今日打卡：多步驟 modal 導引填寫 MOVE／NOURISH／LEARN／RECOVER／REFLECT，資料暫存至 qfTempData，完成後一次寫入；手機底部滑出樣式，chip 快選填入 input，+/- stepper 按鈕支援手機調整數值，蛋白質／水分 chip 依挑戰目標動態生成，離開時三選一確認對話框。 */
 /* v5.5 — clear separation of app settings, card selection and editor. */
 .v55-app-header{min-height:82px}
 .v55-brand{display:flex;flex-direction:column;gap:4px;min-width:0}
@@ -220,7 +221,7 @@
 @media(max-width:600px){.v55-day-bar{padding:12px;gap:6px;border-radius:10px;margin-bottom:12px}.v55-day-bar .p5-nav{gap:6px}.p5-nav-date{flex:1;min-width:0}.btn-txt{display:none}.p5-nav button{padding:8px 11px;white-space:nowrap}.day-denom{display:none}.panel{padding:12px}}
 </style></head><body>
 <header class="v55-app-header">
-  <div class="v55-brand"><strong>Omi Card Studio <span class="v55-version" data-omi-version>v5.7</span></strong><small>One Must Imagine · 84 Days of Deliberate Living</small></div>
+  <div class="v55-brand"><strong>Omi Card Studio <span class="v55-version" data-omi-version>v5.8</span></strong><small>One Must Imagine · 84 Days of Deliberate Living</small></div>
   <button type="button" id="v55OpenSettings" class="v55-settings-trigger" aria-haspopup="dialog" aria-controls="v55SettingsDialog" aria-label="開啟挑戰設定"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a2 2 0 0 1 2 1.4l.4 1.3a7 7 0 0 1 1.6.9l1.3-.3a2 2 0 0 1 2.2 1l1.2 2a2 2 0 0 1-.4 2.4l-1 .9a7 7 0 0 1 0 1.8l1 .9a2 2 0 0 1 .4 2.4l-1.2 2a2 2 0 0 1-2.2 1l-1.3-.3a7 7 0 0 1-1.6.9l-.4 1.3a2 2 0 0 1-2 1.4h-2a2 2 0 0 1-2-1.4l-.4-1.3a7 7 0 0 1-1.6-.9l-1.3.3a2 2 0 0 1-2.2-1l-1.2-2a2 2 0 0 1 .4-2.4l1-.9a7 7 0 0 1 0-1.8l-1-.9a2 2 0 0 1-.4-2.4l1.2-2a2 2 0 0 1 2.2-1l1.3.3a7 7 0 0 1 1.6-.9l.4-1.3a2 2 0 0 1 2-1.4z"/><circle cx="12" cy="13" r="2.5"/></svg><span>挑戰設定</span></button>
 </header>
 <div class="v55-workspace-bar">
@@ -338,10 +339,14 @@
       <details class="v55-help"><summary><span>使用說明</span><span class="v55-arrow" aria-hidden="true"></span></summary>
         <div class="v55-help-body"><p><strong>設定挑戰：</strong>先確認挑戰日期與個人承諾；挑戰開始後部分設定會鎖定。</p><p><strong>選擇小卡：</strong>在「每日打卡」、「每週回顧」、「每週計畫」之間切換。</p><p><strong>編輯與預覽：</strong>填寫內容後即時查看小卡；手機版可以在「編輯／預覽」間切換。</p><p><strong>儲存與匯出：</strong>編輯內容會自動儲存在目前瀏覽器，完成後可匯出 PNG。</p><p class="v55-help-warning">注意：本機自動儲存並非雲端備份。清除網站資料或更換裝置可能使紀錄遺失；PNG 無法還原編輯資料。</p></div>
       </details>
-      <details class="v55-help"><summary><span>版本資訊 <span data-omi-version>v5.7</span></span><span class="v55-arrow" aria-hidden="true"></span></summary>
+      <details class="v55-help"><summary><span>版本資訊 <span data-omi-version>v5.8</span></span><span class="v55-arrow" aria-hidden="true"></span></summary>
         <div class="v55-help-body v56-changelog">
           <section class="v56-release" aria-label="最新版本">
-            <p class="v56-release-title" data-omi-release-heading>Omi Card Studio v5.7</p>
+            <p class="v56-release-title" data-omi-release-heading>Omi Card Studio v5.8</p>
+            <p>新增「快速填寫今日打卡」功能：以多步驟 modal 導引填寫 MOVE／NOURISH／LEARN／RECOVER／REFLECT，所有資料暫存至緩衝區，點擊完成後才一次寫入。手機版以底部滑出樣式呈現，各欄位提供 chip 快選按鈕（點擊填入 input 供微調），以及 +/− stepper 按鈕方便手機調整數值；蛋白質與水分的 chip 選項依挑戰目標動態生成附近數值；離開時顯示三選一確認對話框，可選擇捨棄、寫入目前資料或回到填寫。</p>
+          </section>
+          <section class="v56-release" aria-label="v5.7 更新紀錄">
+            <p class="v56-release-title">Omi Card Studio v5.7</p>
             <p>導覽列日期改為可直接點選的 date input，並在瀏覽當天或本週時 highlight 對應按鈕；手機版 Prev／Next 改顯示箭頭符號，今天與本週保留文字，統一各容器內距並修正平板間距。Undo Bar 與 Status Bar 合併為同一行。Nourish 提示合併為單行顯示，Fruit & Vegetables 勾選邏輯修正（水果未填視為 0）。顯示偏好移入挑戰設定，新增「顯示排定入睡時間」與「顯示目前閱讀的書」開關，並將百分比模式設為預設。</p>
           </section>
           <section class="v56-release" aria-label="v5.6 更新紀錄">
@@ -382,6 +387,7 @@
       <div id="p5UndoBar" class="p5-toolbar"><button type="button" id="p5Undo" disabled>↶ 復原</button><button type="button" id="p5Redo" disabled>↷ 重做</button></div>
       <div id="p5StatusBar" class="p5-status"><span id="p5SaveStatus" role="status" aria-live="polite">正在初始化…</span><button type="button" id="p5Retry" hidden>重試儲存</button><button type="button" id="p5Info">本機資料說明</button></div>
     </div>
+    <button type="button" id="quickFillBtn" style="display:block;width:100%;padding:12px;margin-bottom:8px;background:var(--green);color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:600;cursor:pointer;">✦ 快速填寫今日打卡</button>
     <div id="p5InfoPanel" class="p5-notice-inline" hidden>編輯內容和照片預設只儲存在目前瀏覽器，不會自動同步。可在「挑戰設定 → 資料備份與還原」匯出 JSON 備份，並在其他裝置還原；PNG 圖片不能還原編輯資料。</div>
     <div id="dailyForm"><div class="section"><h2>MOVE｜運動</h2><p class="hint">填入今日的有氧分鐘與肌力訓練次數，系統自動累積本週進度。每週目標：有氧 150 分鐘、肌力 2 次。</p><div class="pair"><label class="field">今日有氧（分鐘）<input data-key="aerobicToday" min="0" type="number" value="0"/></label><label class="field">今日肌力訓練（次）<input data-key="strengthToday" min="0" type="number" value="0"/></label></div><div class="field">本週執行日期</div><div class="checks" id="moveDays"></div></div><div class="section"><h2>NOURISH｜滋養</h2>
       <p id="p3DailyHint" class="hint">請先確認 Commitment Setup。</p>
@@ -468,8 +474,205 @@
     <div class="extra-pages" id="extraPages"></div>
     </div></div><div class="hint">即時預覽 · PNG 使用同一個 Canvas。字體未備妥時會提示，避免輸出錯誤字形。</div><div id="omiFontStatus" class="status warning" role="status" aria-live="polite">正在檢查 Omi 字體…</div><button type="button" id="omiRetryFont" class="btn" style="display:none">重新載入字體</button>
   </section>
-</main><div id="p5Blocker" class="p5-blocker" role="alert">正在安全載入本機資料…</div><div id="p5FirstNotice" class="p5-notice-overlay" hidden><div class="p5-dialog" role="dialog" aria-modal="true" aria-labelledby="p5NoticeTitle"><h2 id="p5NoticeTitle">小卡資料儲存在這台裝置上</h2><p>Challenge 設定、小卡編輯內容與照片預設只保存在目前瀏覽器，不會自動同步。清除網站資料、使用無痕模式或更換裝置，可能使這些內容無法恢復。</p><p>請定期從「挑戰設定 → 資料備份與還原」匯出 JSON 備份。PNG 是圖片，無法還原編輯內容。</p><button type="button" class="primary" id="p5NoticeOk">我了解，開始使用</button></div></div><script>
-const OMI_APP_VERSION='5.7';
+</main>
+
+<!-- Quick Fill Modal -->
+<style>
+.qf-overlay{position:fixed;inset:0;background:#0006;z-index:2000;display:flex;align-items:center;justify-content:center;padding:16px}
+.qf-overlay[hidden]{display:none}
+.qf-dialog{background:#fff;border-radius:16px;padding:28px 24px 32px;width:100%;max-width:480px;box-shadow:0 12px 40px #0003}
+@media(max-width:600px){.qf-overlay{align-items:flex-end;padding:0}.qf-dialog{border-radius:20px 20px 0 0;padding:28px 24px 36px;max-width:100%}}
+.qf-date{font:600 13px/1 Inter,'Noto Sans TC',system-ui,sans-serif;color:#66766b;letter-spacing:.06em;margin-bottom:10px}
+.qf-dialog h2{font-size:22px;margin:0 0 22px;color:var(--green)}
+.qf-dialog .field{font-size:14px}
+.qf-actions{display:flex;gap:10px;margin-top:28px}
+.qf-actions button{flex:1;min-height:52px;font-size:16px;font-weight:600;border-radius:12px;cursor:pointer;border:1px solid #b8c7ba;background:#fff;color:var(--green)}
+.qf-actions button.qf-primary{background:var(--green);color:#fff;border-color:var(--green)}
+.qf-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;align-items:center}
+.qf-chips button{flex:none;height:34px;padding:0 12px;font-size:13px;font-weight:500;border-radius:7px;border:1.5px solid #dde4de;background:#f4f7f4;color:#4a6650;cursor:pointer}
+.qf-chips input{flex:1;min-height:44px;padding:0 10px;border:none;border-radius:0;font:16px Inter,'Noto Sans TC',system-ui,sans-serif;color:#173e2a;background:transparent;outline:none;-moz-appearance:textfield}
+.qf-chips input::-webkit-inner-spin-button,.qf-chips input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.qf-stepper-wrap{display:flex;flex:1 1 100%;align-items:stretch;border:1.5px solid #c9d5ca;border-radius:7px;overflow:hidden;background:#fff}
+.qf-stepper-wrap:has(input:not(:placeholder-shown)){border-color:var(--green)}
+.qf-stepper-btns{display:flex;flex-direction:row;border-left:1px solid #dde4de;flex-shrink:0}
+.qf-stepper-btns .qf-step-dn,.qf-stepper-btns .qf-step-up{width:48px;min-height:44px;padding:0;font-size:16px;border:none;border-radius:0;background:#f4f7f4;color:#4a6650;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.qf-stepper-btns .qf-step-dn{border-right:1px solid #dde4de}
+.qf-stepper-btns .qf-step-dn:active,.qf-stepper-btns .qf-step-up:active{background:#e0e8e1}
+.qf-check-row{display:flex;align-items:center;gap:12px;padding:12px 0;font-size:16px;font-weight:500;cursor:pointer}
+.qf-check-row input{width:22px;height:22px;accent-color:var(--green);cursor:pointer;flex-shrink:0}
+.qf-book-history{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;min-height:0}
+.qf-book-btn{padding:7px 12px;font-size:13px;font-weight:500;border-radius:7px;border:1.5px solid #dde4de;background:#f4f7f4;color:#4a6650;cursor:pointer;text-align:left;line-height:1.3}
+.qf-leave-overlay{position:fixed;inset:0;background:#0009;z-index:3000;display:flex;align-items:center;justify-content:center;padding:16px}
+.qf-leave-overlay[hidden]{display:none}
+@media(max-width:800px){.qf-leave-overlay{align-items:flex-end;padding:0}.qf-leave-overlay .qf-dialog{border-radius:20px 20px 0 0;padding:28px 24px 36px;max-width:100%}.qf-leave-overlay .qf-leave-actions{flex-direction:column-reverse}}
+.qf-leave-title{font:700 18px/1.3 Inter,'Noto Sans TC',system-ui,sans-serif;color:var(--green);margin:0 0 6px}
+.qf-leave-actions{display:flex;flex-direction:column;gap:10px;margin-top:24px}
+.qf-leave-actions button{width:100%;min-height:52px;font-size:15px;font-weight:600;border-radius:12px;cursor:pointer;border:1px solid #b8c7ba;background:#fff;color:var(--green)}
+.qf-leave-actions button.qf-primary{background:var(--green);color:#fff;border-color:var(--green)}
+.qf-leave-danger{color:#b03030!important;border-color:#e0b8b8!important}
+</style>
+
+<div id="qfModal" class="qf-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="qfModalTitle">
+  <div class="qf-dialog">
+    <div class="qf-date" id="qfModalDate"></div>
+    <h2 id="qfModalTitle">MOVE｜運動</h2>
+    <div class="field">今日有氧（分鐘）
+      <div class="qf-chips" id="qfAerobicChips">
+        <button type="button" data-val="15">15</button>
+        <button type="button" data-val="30">30</button>
+        <button type="button" data-val="45">45</button>
+        <button type="button" data-val="60">60</button>
+        <button type="button" data-val="90">90</button>
+        <input id="qfAerobic" type="number" min="0" step="5" placeholder="輸入分鐘數"/>
+      </div>
+    </div>
+    <div class="field">今日肌力訓練（次）
+      <div class="qf-chips" id="qfStrengthChips">
+        <button type="button" data-val="1">1</button>
+        <button type="button" data-val="2">2</button>
+        <input id="qfStrength" type="number" min="0" step="1" placeholder="輸入次數"/>
+      </div>
+    </div>
+    <div class="qf-actions">
+      <button type="button" id="qfCancel">離開</button>
+      <button type="button" id="qfNext" class="qf-primary">下一步 →</button>
+    </div>
+  </div>
+</div>
+
+<div id="qfModal2" class="qf-overlay" hidden role="dialog" aria-modal="true">
+  <div class="qf-dialog">
+    <div class="qf-date" id="qfModal2Date"></div>
+
+    <div id="qfStep_alcohol" hidden>
+      <h2>NOURISH｜滋養</h2>
+      <label class="qf-check-row">
+        <input id="qfAlcohol" type="checkbox"/>
+        <span>今日未飲酒</span>
+      </label>
+    </div>
+
+    <div id="qfStep_fruit_vegetables" hidden>
+      <h2>蔬菜 &amp; 水果</h2>
+      <div class="field">蔬菜（份）
+        <div class="qf-chips" id="qfVegetablesChips">
+          <button type="button" data-val="1">1</button>
+          <button type="button" data-val="2">2</button>
+          <button type="button" data-val="3">3</button>
+          <button type="button" data-val="4">4</button>
+          <button type="button" data-val="5">5</button>
+          <input id="qfVegetables" type="number" min="0" step="0.5" placeholder="輸入份數"/>
+        </div>
+      </div>
+      <div class="field">水果（份）
+        <div class="qf-chips" id="qfFruitChips">
+          <button type="button" data-val="1">1</button>
+          <button type="button" data-val="2">2</button>
+          <button type="button" data-val="3">3</button>
+          <button type="button" data-val="4">4</button>
+          <button type="button" data-val="5">5</button>
+          <input id="qfFruit" type="number" min="0" step="0.5" placeholder="輸入份數"/>
+        </div>
+      </div>
+    </div>
+
+    <div id="qfStep_protein" hidden>
+      <h2>蛋白質攝取</h2>
+      <div class="field">Protein · 今日蛋白質攝取（g）
+        <div class="qf-chips" id="qfProteinChips">
+          <input id="qfProtein" type="number" min="0" step="1" placeholder="輸入克數"/>
+        </div>
+      </div>
+    </div>
+
+    <div id="qfStep_hydration" hidden>
+      <h2>白開水攝取</h2>
+      <div class="field">Hydration · 今日白開水（ml）
+        <div class="qf-chips" id="qfHydrationChips">
+          <input id="qfWater" type="number" min="0" step="100" placeholder="輸入毫升數"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="qf-actions">
+      <button type="button" id="qfPrev2" hidden>← 上一步</button>
+      <button type="button" id="qfCancel2">離開</button>
+      <button type="button" id="qfNext2" class="qf-primary">下一步 →</button>
+    </div>
+  </div>
+</div>
+
+<div id="qfModal3" class="qf-overlay" hidden role="dialog" aria-modal="true">
+  <div class="qf-dialog">
+    <div class="qf-date" id="qfModal3Date"></div>
+    <h2>LEARN｜求知</h2>
+
+    <div class="field">今天閱讀的書
+      <div id="qfBookHistory" class="qf-book-history"></div>
+      <input id="qfBook" type="text" placeholder="輸入書名（可選）" style="width:100%;margin-top:8px;min-height:44px;padding:0 10px;border:1.5px solid #c9d5ca;border-radius:9px;font:16px Inter,'Noto Sans TC',system-ui,sans-serif;color:#173e2a"/>
+    </div>
+
+    <div class="field" style="margin-top:16px">閱讀時間（分鐘）
+      <div class="qf-chips" id="qfReadingChips">
+        <button type="button" data-val="15">15</button>
+        <button type="button" data-val="20">20</button>
+        <button type="button" data-val="30">30</button>
+        <button type="button" data-val="45">45</button>
+        <button type="button" data-val="60">60</button>
+        <input id="qfReading" type="number" min="0" step="5" placeholder="其他分鐘數"/>
+      </div>
+    </div>
+
+    <div class="qf-actions">
+      <button type="button" id="qfPrev3">← 上一步</button>
+      <button type="button" id="qfCancel3">離開</button>
+      <button type="button" id="qfNext3" class="qf-primary">下一步 →</button>
+    </div>
+  </div>
+</div>
+
+<div id="qfModal4" class="qf-overlay" hidden role="dialog" aria-modal="true">
+  <div class="qf-dialog">
+    <div class="qf-date" id="qfModal4Date"></div>
+    <h2>RECOVER｜恢復</h2>
+    <label class="qf-check-row"><input id="qfSleepOpportunity" type="checkbox"/><span>達成 8 小時睡眠機會</span></label>
+    <label class="qf-check-row"><input id="qfBedRegular" type="checkbox"/><span>入睡時間符合 ±60 分鐘</span></label>
+    <label class="qf-check-row"><input id="qfWakeRegular" type="checkbox"/><span>起床時間符合 ±60 分鐘</span></label>
+    <div class="qf-actions">
+      <button type="button" id="qfPrev4">← 上一步</button>
+      <button type="button" id="qfCancel4">離開</button>
+      <button type="button" id="qfNext4" class="qf-primary">下一步 →</button>
+    </div>
+  </div>
+</div>
+
+<div id="qfModal5" class="qf-overlay" hidden role="dialog" aria-modal="true">
+  <div class="qf-dialog">
+    <div class="qf-date" id="qfModal5Date"></div>
+    <h2>REFLECT｜反思</h2>
+    <div class="field">今日的一個觀察
+      <textarea id="qfReflection" maxlength="180" placeholder="寫下一個今天注意到的事情" style="width:100%;min-height:120px;margin-top:8px;padding:10px;border:1.5px solid #c9d5ca;border-radius:9px;font:16px/1.6 Inter,'Noto Sans TC',system-ui,sans-serif;color:#173e2a;resize:vertical"></textarea>
+    </div>
+    <div class="qf-actions">
+      <button type="button" id="qfPrev5">← 上一步</button>
+      <button type="button" id="qfCancel5">離開</button>
+      <button type="button" id="qfNext5" class="qf-primary">完成</button>
+    </div>
+  </div>
+</div>
+
+<div id="qfLeaveConfirm" class="qf-leave-overlay" hidden role="alertdialog" aria-modal="true">
+  <div class="qf-dialog">
+    <p class="qf-leave-title">確定要離開嗎？</p>
+    <p class="hint" style="margin:0">目前的資料並沒有寫入。</p>
+    <div class="qf-leave-actions">
+      <button type="button" id="qfLeaveBack" class="qf-primary">回到填寫</button>
+      <button type="button" id="qfLeaveCommit">把目前已填的資料寫入並離開</button>
+      <button type="button" id="qfLeaveDiscard" class="qf-leave-danger">捨棄並離開</button>
+    </div>
+  </div>
+</div><div id="p5Blocker" class="p5-blocker" role="alert">正在安全載入本機資料…</div><div id="p5FirstNotice" class="p5-notice-overlay" hidden><div class="p5-dialog" role="dialog" aria-modal="true" aria-labelledby="p5NoticeTitle"><h2 id="p5NoticeTitle">小卡資料儲存在這台裝置上</h2><p>Challenge 設定、小卡編輯內容與照片預設只保存在目前瀏覽器，不會自動同步。清除網站資料、使用無痕模式或更換裝置，可能使這些內容無法恢復。</p><p>請定期從「挑戰設定 → 資料備份與還原」匯出 JSON 備份。PNG 是圖片，無法還原編輯內容。</p><button type="button" class="primary" id="p5NoticeOk">我了解，開始使用</button></div></div><script>
+const OMI_APP_VERSION='5.8';
 document.title=`Omi Card Studio v${OMI_APP_VERSION}`;
 document.querySelectorAll('[data-omi-version]').forEach(node=>{node.textContent=`v${OMI_APP_VERSION}`;});
 const omiReleaseHeading=document.querySelector('[data-omi-release-heading]');
@@ -2502,5 +2705,447 @@ OmiPhase5.init();
   if(el('p5Blocker').hidden && window.OmiPhase5?.ready && needsSetup())show();
 })();
 
+
+// ── Quick Fill Modal ──────────────────────────────────────────────
+(function(){
+  // Add stepper buttons to all number inputs inside chip containers
+  document.querySelectorAll('.qf-chips input[type="number"]').forEach(input => {
+    const wrap = document.createElement('div');
+    wrap.className = 'qf-stepper-wrap';
+    input.replaceWith(wrap);
+    wrap.appendChild(input);
+    const btns = document.createElement('div');
+    btns.className = 'qf-stepper-btns';
+    btns.innerHTML = '<button type="button" class="qf-step-dn" tabindex="-1">−</button><button type="button" class="qf-step-up" tabindex="-1">+</button>';
+    wrap.appendChild(btns);
+    const stepDn = btns.querySelector('.qf-step-dn');
+    const stepUp = btns.querySelector('.qf-step-up');
+    stepUp.addEventListener('click', () => {
+      const step = parseFloat(input.step) || 1;
+      input.value = Math.round(((parseFloat(input.value) || 0) + step) * 1000) / 1000;
+      input.dispatchEvent(new Event('input', {bubbles:true}));
+    });
+    stepDn.addEventListener('click', () => {
+      const step = parseFloat(input.step) || 1;
+      const next = Math.round(((parseFloat(input.value) || 0) - step) * 1000) / 1000;
+      input.value = Math.max(parseFloat(input.min) || 0, next);
+      input.dispatchEvent(new Event('input', {bubbles:true}));
+    });
+  });
+
+  function fmtDate(str){
+    if(!str)return '';
+    const [y,m,d]=str.split('-');
+    return `${y} 年 ${Number(m)} 月 ${Number(d)} 日`;
+  }
+
+  function getChipVal(groupId, inputId){
+    return document.getElementById(inputId)?.value || '0';
+  }
+
+  function openQF(){
+    collect();
+    const dateStr = document.querySelector('[data-key="date"]')?.value || '';
+    document.getElementById('qfModalDate').textContent = fmtDate(dateStr) || '';
+
+    // Read from temp buffer first, fall back to actual form values
+    const aerobic = String(qfTempData.aerobicToday ?? state.aerobicToday ?? 0);
+    const strength = String(qfTempData.strengthToday ?? state.strengthToday ?? 0);
+
+    document.getElementById('qfAerobic').value = aerobic !== '0' ? aerobic : '';
+    document.getElementById('qfStrength').value = strength !== '0' ? strength : '';
+
+    document.getElementById('qfModal').hidden = false;
+  }
+
+  function closeQF(){
+    document.getElementById('qfModal').hidden = true;
+  }
+
+  // Chip click handlers
+  document.getElementById('qfAerobicChips').addEventListener('click', function(e){
+    const btn = e.target.closest('button[data-val]');
+    if(!btn) return;
+    document.getElementById('qfAerobic').value = btn.dataset.val;
+  });
+  document.getElementById('qfStrengthChips').addEventListener('click', function(e){
+    const btn = e.target.closest('button[data-val]');
+    if(!btn) return;
+    document.getElementById('qfStrength').value = btn.dataset.val;
+  });
+
+  document.getElementById('quickFillBtn').addEventListener('click', function(){
+    qfTempData = {}; // reset only on fresh entry
+    openQF();
+  });
+  // ── Leave confirmation dialog ────────────────────────────────────
+  let qfLeaveCollectFn = null;
+  let qfLeaveCloseFn = null;
+
+  function showLeaveConfirm(collectFn, closeFn){
+    qfLeaveCollectFn = collectFn;
+    qfLeaveCloseFn = closeFn;
+    document.getElementById('qfLeaveConfirm').hidden = false;
+  }
+  function hideLeaveConfirm(){
+    document.getElementById('qfLeaveConfirm').hidden = true;
+  }
+
+  document.getElementById('qfLeaveBack').addEventListener('click', hideLeaveConfirm);
+  document.getElementById('qfLeaveDiscard').addEventListener('click', function(){
+    hideLeaveConfirm();
+    if(qfLeaveCloseFn) qfLeaveCloseFn();
+  });
+  document.getElementById('qfLeaveCommit').addEventListener('click', function(){
+    if(qfLeaveCollectFn) qfLeaveCollectFn();
+    commitAllQF();
+    hideLeaveConfirm();
+    if(qfLeaveCloseFn) qfLeaveCloseFn();
+  });
+
+  function triggerLeave(collectFn, closeFn){
+    showLeaveConfirm(collectFn, closeFn);
+  }
+
+  // Modal 1 (MOVE) leave
+  function collectMove(){
+    qfTempData.aerobicToday = getChipVal('qfAerobicChips','qfAerobic');
+    qfTempData.strengthToday = getChipVal('qfStrengthChips','qfStrength');
+  }
+  document.getElementById('qfCancel').addEventListener('click', () => triggerLeave(collectMove, closeQF));
+  document.getElementById('qfModal').addEventListener('click', function(e){ if(e.target===this) triggerLeave(collectMove, closeQF); });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key !== 'Escape') return;
+    if(!document.getElementById('qfLeaveConfirm').hidden){ hideLeaveConfirm(); return; }
+    if(!document.getElementById('qfModal').hidden) triggerLeave(collectMove, closeQF);
+  });
+
+  document.getElementById('qfNext').addEventListener('click', function(){
+    // Store MOVE data temporarily — do NOT write to form yet
+    qfTempData.aerobicToday = getChipVal('qfAerobicChips', 'qfAerobic');
+    qfTempData.strengthToday = getChipVal('qfStrengthChips', 'qfStrength');
+    closeQF();
+    openQF2();
+  });
+
+  // ── Temp data store — written to form only on 完成 ───────────────
+  let qfTempData = {};
+
+  function commitAllQF(){
+    function writeField(el, val, evt='input'){
+      if(!el) return;
+      el.value = val;
+      el.dispatchEvent(new Event(evt, {bubbles:true}));
+    }
+    writeField(document.querySelector('[data-key="aerobicToday"]'), qfTempData.aerobicToday ?? '');
+    writeField(document.querySelector('[data-key="strengthToday"]'), qfTempData.strengthToday ?? '');
+    if('p3Alcohol' in qfTempData){
+      const el = document.getElementById('p3Alcohol');
+      el.checked = qfTempData.p3Alcohol;
+      el.dispatchEvent(new Event('change', {bubbles:true}));
+    }
+    ['p3Vegetables','p3Fruit','p3Protein','p3Water'].forEach(id => {
+      if(id in qfTempData) writeField(document.getElementById(id), qfTempData[id]);
+    });
+    if('book' in qfTempData) writeField(document.querySelector('[data-key="book"]'), qfTempData.book);
+    if('reading' in qfTempData) writeField(document.querySelector('[data-key="reading"]'), qfTempData.reading);
+    ['sleepOpportunity','bedRegular','wakeRegular'].forEach(k => {
+      if(k in qfTempData){
+        const el = document.querySelector(`[data-key="${k}"]`);
+        if(el){ el.checked = qfTempData[k]; el.dispatchEvent(new Event('change',{bubbles:true})); }
+      }
+    });
+    if('reflection' in qfTempData) writeField(document.querySelector('[data-key="reflection"]'), qfTempData.reflection);
+  }
+
+  // ── NOURISH modal (step 2, multi-step) ──────────────────────────
+  let qf2Steps = [];
+  let qf2Idx = 0;
+
+  const qf2StepDefs = {
+    alcohol: {
+      prefill(){
+        const val = 'p3Alcohol' in qfTempData ? qfTempData.p3Alcohol : document.getElementById('p3Alcohol').checked;
+        document.getElementById('qfAlcohol').checked = val;
+      },
+      collect(){ qfTempData.p3Alcohol = document.getElementById('qfAlcohol').checked; }
+    },
+    fruit_vegetables: {
+      prefill(){
+        prefillChip2('qfVegetablesChips','qfVegetables','p3Vegetables');
+        prefillChip2('qfFruitChips','qfFruit','p3Fruit');
+      },
+      collect(){
+        qfTempData.p3Vegetables = getChipVal('qfVegetablesChips','qfVegetables');
+        qfTempData.p3Fruit = getChipVal('qfFruitChips','qfFruit');
+      }
+    },
+    protein: {
+      prefill(){
+        const target = (() => { try { return NourishStudio.currentDaily().targets.protein; } catch(e){ return null; } })();
+        const chips = document.getElementById('qfProteinChips');
+        chips.querySelectorAll(':scope > button').forEach(b => b.remove());
+        if(target){
+          const step = Math.max(5, Math.round(target * 0.1 / 5) * 5);
+          [-2,-1,0,1,2].map(i => Math.round((target + i * step) / 5) * 5).filter(v => v > 0)
+            .forEach(v => {
+              const btn = document.createElement('button');
+              btn.type = 'button'; btn.dataset.val = v; btn.textContent = v;
+              chips.insertBefore(btn, document.getElementById('qfProtein').closest('.qf-stepper-wrap'));
+            });
+        }
+        prefillChip2('qfProteinChips','qfProtein','p3Protein');
+      },
+      collect(){ qfTempData.p3Protein = getChipVal('qfProteinChips','qfProtein'); }
+    },
+    hydration: {
+      prefill(){
+        const target = (() => { try { return NourishStudio.currentDaily().targets.hydration; } catch(e){ return null; } })();
+        const chips = document.getElementById('qfHydrationChips');
+        chips.querySelectorAll(':scope > button').forEach(b => b.remove());
+        if(target){
+          const step = Math.max(100, Math.round(target * 0.1 / 100) * 100);
+          [-2,-1,0,1,2].map(i => Math.round((target + i * step) / 100) * 100).filter(v => v > 0)
+            .forEach(v => {
+              const btn = document.createElement('button');
+              btn.type = 'button'; btn.dataset.val = v; btn.textContent = v;
+              chips.insertBefore(btn, document.getElementById('qfWater').closest('.qf-stepper-wrap'));
+            });
+        }
+        prefillChip2('qfHydrationChips','qfWater','p3Water');
+      },
+      collect(){ qfTempData.p3Water = getChipVal('qfHydrationChips','qfWater'); }
+    }
+  };
+
+  function prefillChip2(chipsId, inputId, formId){
+    // Read from temp buffer first, fall back to actual form value
+    const val = (formId in qfTempData) ? qfTempData[formId] : (document.getElementById(formId)?.value || '');
+    document.getElementById(inputId).value = val;
+  }
+
+
+  function showQF2Step(idx){
+    Object.keys(qf2StepDefs).forEach(k=>{
+      document.getElementById('qfStep_'+k).hidden = true;
+    });
+    const key = qf2Steps[idx];
+    document.getElementById('qfStep_'+key).hidden = false;
+    qf2StepDefs[key].prefill();
+    document.getElementById('qfNext2').textContent = '下一步 →';
+    document.getElementById('qfPrev2').hidden = false;
+  }
+
+  function openQF2(){
+    // Build step queue based on user's commitments
+    let selected = [];
+    try { selected = NourishStudio.currentDaily().selected; } catch(e){}
+    const confirmed = (() => { try { return NourishStudio.confirmed; } catch(e){ return false; } })();
+    if(!confirmed) return; // skip if Nourish not set up
+
+    qf2Steps = ['alcohol', ...['fruit_vegetables','protein','hydration'].filter(k => selected.includes(k))];
+    qf2Idx = 0;
+
+    document.getElementById('qfModal2Date').textContent = document.getElementById('qfModalDate').textContent;
+    showQF2Step(0);
+    document.getElementById('qfModal2').hidden = false;
+  }
+
+  function closeQF2(){ document.getElementById('qfModal2').hidden = true; }
+
+  // Chip handlers for modal 2
+  [
+    ['qfVegetablesChips','qfVegetables'],
+    ['qfFruitChips','qfFruit'],
+    ['qfProteinChips','qfProtein'],
+    ['qfHydrationChips','qfWater'],
+  ].forEach(([chipsId, inputId])=>{
+    document.getElementById(chipsId).addEventListener('click', function(e){
+      const btn = e.target.closest('button[data-val]');
+      if(!btn) return;
+      document.getElementById(inputId).value = btn.dataset.val;
+    });
+  });
+
+  document.getElementById('qfPrev2').addEventListener('click', function(){
+    qf2StepDefs[qf2Steps[qf2Idx]].collect(); // preserve current step's values
+    if(qf2Idx > 0){
+      qf2Idx--;
+      showQF2Step(qf2Idx);
+    } else {
+      closeQF2();
+      openQF();
+    }
+  });
+  document.getElementById('qfCancel2').addEventListener('click', () => triggerLeave(() => qf2StepDefs[qf2Steps[qf2Idx]].collect(), closeQF2));
+  document.getElementById('qfModal2').addEventListener('click', function(e){ if(e.target===this) triggerLeave(() => qf2StepDefs[qf2Steps[qf2Idx]].collect(), closeQF2); });
+  document.addEventListener('keydown', function(e){
+    if(e.key==='Escape' && !document.getElementById('qfModal2').hidden) triggerLeave(() => qf2StepDefs[qf2Steps[qf2Idx]].collect(), closeQF2);
+  });
+
+  document.getElementById('qfNext2').addEventListener('click', function(){
+    qf2StepDefs[qf2Steps[qf2Idx]].collect();
+    if(qf2Idx < qf2Steps.length - 1){
+      qf2Idx++;
+      showQF2Step(qf2Idx);
+    } else {
+      closeQF2();
+      openQF3();
+    }
+  });
+
+  // ── LEARN modal (step 3) ─────────────────────────────────────────
+  async function getPastBooks(){
+    const db = window.OmiPhase5?.db;
+    if(!db) return [];
+    return new Promise(resolve => {
+      try {
+        const req = db.transaction('records','readonly').objectStore('records').getAll();
+        req.onsuccess = () => {
+          const seen = new Set();
+          const books = [];
+          req.result
+            .filter(r => r.kind === 'daily' && r.fields?.book?.trim())
+            .sort((a,b) => b.id.localeCompare(a.id))
+            .forEach(r => {
+              const b = r.fields.book.trim();
+              if(!seen.has(b)){ seen.add(b); books.push(b); }
+            });
+          resolve(books.slice(0, 15));
+        };
+        req.onerror = () => resolve([]);
+      } catch(e){ resolve([]); }
+    });
+  }
+
+  function renderBookHistory(pastBooks){
+    const container = document.getElementById('qfBookHistory');
+    container.replaceChildren();
+    pastBooks.forEach(book => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'qf-book-btn';
+      btn.textContent = book;
+      btn.addEventListener('click', () => {
+        document.getElementById('qfBook').value = book;
+      });
+      container.appendChild(btn);
+    });
+    if(pastBooks.length === 0){
+      const hint = document.createElement('p');
+      hint.className = 'hint';
+      hint.style.margin = '4px 0';
+      hint.textContent = '尚無歷史記錄';
+      container.appendChild(hint);
+    }
+  }
+
+  async function openQF3(){
+    document.getElementById('qfModal3Date').textContent = document.getElementById('qfModalDate').textContent;
+
+    document.getElementById('qfBook').value = qfTempData.book ?? (document.querySelector('[data-key="book"]')?.value || '');
+    document.getElementById('qfReading').value = qfTempData.reading ?? (document.querySelector('[data-key="reading"]')?.value || '');
+
+    const pastBooks = await getPastBooks();
+    renderBookHistory(pastBooks);
+
+    document.getElementById('qfModal3').hidden = false;
+  }
+
+  function closeQF3(){ document.getElementById('qfModal3').hidden = true; }
+
+  function collectQF3(){
+    qfTempData.book = document.getElementById('qfBook').value;
+    qfTempData.reading = document.getElementById('qfReading').value;
+  }
+
+  document.getElementById('qfReadingChips').addEventListener('click', function(e){
+    const btn = e.target.closest('button[data-val]');
+    if(!btn) return;
+    document.getElementById('qfReading').value = btn.dataset.val;
+  });
+
+  document.getElementById('qfPrev3').addEventListener('click', function(){
+    collectQF3();
+    closeQF3();
+    // Re-open NOURISH at last step if it has steps, otherwise MOVE
+    if(qf2Steps.length > 0){
+      qf2Idx = qf2Steps.length - 1;
+      document.getElementById('qfModal2Date').textContent = document.getElementById('qfModalDate').textContent;
+      showQF2Step(qf2Idx);
+      document.getElementById('qfModal2').hidden = false;
+    } else {
+      openQF();
+    }
+  });
+
+  document.getElementById('qfCancel3').addEventListener('click', () => triggerLeave(collectQF3, closeQF3));
+  document.getElementById('qfModal3').addEventListener('click', function(e){ if(e.target===this) triggerLeave(collectQF3, closeQF3); });
+  document.addEventListener('keydown', function(e){
+    if(e.key==='Escape' && !document.getElementById('qfModal3').hidden) triggerLeave(collectQF3, closeQF3);
+  });
+
+  document.getElementById('qfNext3').addEventListener('click', function(){
+    collectQF3();
+    closeQF3();
+    openQF4();
+  });
+
+  // ── RECOVER modal (step 4) ───────────────────────────────────────
+  function openQF4(){
+    document.getElementById('qfModal4Date').textContent = document.getElementById('qfModalDate').textContent;
+    document.getElementById('qfSleepOpportunity').checked = qfTempData.sleepOpportunity ?? document.querySelector('[data-key="sleepOpportunity"]')?.checked ?? false;
+    document.getElementById('qfBedRegular').checked      = qfTempData.bedRegular      ?? document.querySelector('[data-key="bedRegular"]')?.checked      ?? false;
+    document.getElementById('qfWakeRegular').checked     = qfTempData.wakeRegular     ?? document.querySelector('[data-key="wakeRegular"]')?.checked      ?? false;
+    document.getElementById('qfModal4').hidden = false;
+  }
+
+  function closeQF4(){ document.getElementById('qfModal4').hidden = true; }
+
+  function collectQF4(){
+    qfTempData.sleepOpportunity = document.getElementById('qfSleepOpportunity').checked;
+    qfTempData.bedRegular       = document.getElementById('qfBedRegular').checked;
+    qfTempData.wakeRegular      = document.getElementById('qfWakeRegular').checked;
+  }
+
+  document.getElementById('qfPrev4').addEventListener('click', function(){
+    collectQF4(); closeQF4(); openQF3();
+  });
+  document.getElementById('qfCancel4').addEventListener('click', () => triggerLeave(collectQF4, closeQF4));
+  document.getElementById('qfModal4').addEventListener('click', function(e){ if(e.target===this) triggerLeave(collectQF4, closeQF4); });
+  document.addEventListener('keydown', function(e){
+    if(e.key==='Escape' && !document.getElementById('qfModal4').hidden) triggerLeave(collectQF4, closeQF4);
+  });
+  document.getElementById('qfNext4').addEventListener('click', function(){
+    collectQF4(); closeQF4(); openQF5();
+  });
+
+  // ── REFLECT modal (step 5 — final) ──────────────────────────────
+  function openQF5(){
+    document.getElementById('qfModal5Date').textContent = document.getElementById('qfModalDate').textContent;
+    document.getElementById('qfReflection').value = qfTempData.reflection ?? document.querySelector('[data-key="reflection"]')?.value ?? '';
+    document.getElementById('qfModal5').hidden = false;
+  }
+
+  function closeQF5(){ document.getElementById('qfModal5').hidden = true; }
+
+  document.getElementById('qfPrev5').addEventListener('click', function(){
+    qfTempData.reflection = document.getElementById('qfReflection').value;
+    closeQF5(); openQF4();
+  });
+  function collectReflect(){ qfTempData.reflection = document.getElementById('qfReflection').value; }
+  document.getElementById('qfCancel5').addEventListener('click', () => triggerLeave(collectReflect, closeQF5));
+  document.getElementById('qfModal5').addEventListener('click', function(e){ if(e.target===this) triggerLeave(collectReflect, closeQF5); });
+  document.addEventListener('keydown', function(e){
+    if(e.key==='Escape' && !document.getElementById('qfModal5').hidden) triggerLeave(collectReflect, closeQF5);
+  });
+  document.getElementById('qfNext5').addEventListener('click', function(){
+    qfTempData.reflection = document.getElementById('qfReflection').value;
+    commitAllQF();
+    closeQF5();
+  });
+
+})();
 
 </script></body></html>
