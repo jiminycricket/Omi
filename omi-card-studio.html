@@ -495,7 +495,7 @@
 .qf-stepper-wrap{display:flex;flex:1 1 100%;align-items:stretch;border:1.5px solid #c9d5ca;border-radius:7px;overflow:hidden;background:#fff}
 .qf-stepper-wrap:has(input:not(:placeholder-shown)){border-color:var(--green)}
 .qf-stepper-btns{display:flex;flex-direction:row;border-left:1px solid #dde4de;flex-shrink:0}
-.qf-stepper-btns .qf-step-dn,.qf-stepper-btns .qf-step-up{width:48px;min-height:44px;padding:0;font-size:16px;border:none;border-radius:0;background:#f4f7f4;color:#4a6650;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.qf-stepper-btns .qf-step-dn,.qf-stepper-btns .qf-step-up{width:48px;min-height:44px;padding:0;font-size:16px;border:none;border-radius:0;background:#f4f7f4;color:#4a6650;cursor:pointer;display:flex;align-items:center;justify-content:center;touch-action:manipulation}
 .qf-stepper-btns .qf-step-dn{border-right:1px solid #dde4de}
 .qf-stepper-btns .qf-step-dn:active,.qf-stepper-btns .qf-step-up:active{background:#e0e8e1}
 .qf-check-row{display:flex;align-items:center;gap:12px;padding:12px 0;font-size:16px;font-weight:500;cursor:pointer}
@@ -2736,17 +2736,16 @@ OmiPhase5.init();
     wrap.appendChild(btns);
     const stepDn = btns.querySelector('.qf-step-dn');
     const stepUp = btns.querySelector('.qf-step-up');
-    stepUp.addEventListener('click', () => {
+    function stepBy(delta) {
       const step = parseFloat(input.step) || 1;
-      input.value = Math.round(((parseFloat(input.value) || 0) + step) * 1000) / 1000;
+      const next = Math.round(((parseFloat(input.value) || 0) + delta * step) * 1000) / 1000;
+      input.value = delta > 0 ? next : Math.max(parseFloat(input.min) || 0, next);
       input.dispatchEvent(new Event('input', {bubbles:true}));
-    });
-    stepDn.addEventListener('click', () => {
-      const step = parseFloat(input.step) || 1;
-      const next = Math.round(((parseFloat(input.value) || 0) - step) * 1000) / 1000;
-      input.value = Math.max(parseFloat(input.min) || 0, next);
-      input.dispatchEvent(new Event('input', {bubbles:true}));
-    });
+    }
+    stepUp.addEventListener('touchend', (e) => { e.preventDefault(); stepBy(1); });
+    stepDn.addEventListener('touchend', (e) => { e.preventDefault(); stepBy(-1); });
+    stepUp.addEventListener('click', () => stepBy(1));
+    stepDn.addEventListener('click', () => stepBy(-1));
   });
 
   function fmtDate(str){
