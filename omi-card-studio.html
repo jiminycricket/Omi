@@ -1,6 +1,6 @@
 <!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Omi Card Studio v5.6</title><link id="omiFontStylesheet" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,700&family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@400;500;600;700&display=swap" media="print" onload="this.media='all';this.dataset.loaded='true'" onerror="this.dataset.failed='true';this.disabled=true"><style>
 
-:root{--green:#103f2a;--cream:#fcf9f5;--gold:#ffe67a}*{box-sizing:border-box}body{margin:0;background:#eef0ec;color:var(--green);font-family:Inter,'Noto Sans TC',system-ui,sans-serif}header{background:#103f2a;color:white;padding:16px clamp(16px,4vw,42px);display:flex;justify-content:space-between;align-items:center;gap:12px}header strong{font:700 27px Inter,'Noto Sans TC',system-ui,sans-serif}header small{font:12px Inter,'Noto Sans TC',system-ui,sans-serif;opacity:.8}.layout{display:grid;grid-template-columns:minmax(310px,430px) minmax(0,1fr);gap:26px;max-width:1420px;margin:24px auto;padding:0 18px}.panel{background:white;border-radius:16px;padding:20px;box-shadow:0 4px 25px #123e2910;overflow-y:auto;align-self:start;position:sticky;top:90px;max-height:calc(100dvh - 120px)}.panel h2{font-size:17px;margin:14px 0 8px}.tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:12px}.tabs button{font-size:12px;padding:10px 6px;min-height:49px;line-height:1.35;overflow-wrap:break-word}.preview canvas{touch-action:pan-y}.btn,button{border:1px solid #b8c7ba;background:white;color:var(--green);border-radius:9px;padding:10px 12px;cursor:pointer;font:600 13px/1.35 Inter,'Noto Sans TC',system-ui,sans-serif}button.active,.primary{background:var(--green);color:white;border-color:var(--green)}.primary{width:100%;margin-top:14px;font-size:15px}.field{display:flex;flex-direction:column;gap:5px;margin:10px 0;font-size:13px}.field input,.field textarea,.field select{width:100%;padding:9px 10px;border:1px solid #c9d5ca;border-radius:7px;font:14px Inter,'Noto Sans TC',system-ui,sans-serif;color:#173e2a;background:#fff}.field textarea{min-height:72px;resize:vertical}.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}.checks{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}.checks label{text-align:center;font-size:12px}.checks input{display:block;margin:5px auto;accent-color:var(--green);width:17px;height:17px}.checkrow{display:flex;align-items:center;gap:8px;font-size:13px;margin:8px 0}.checkrow input{accent-color:var(--green);width:18px;height:18px}.hint{font:12px/1.65 Inter,'Noto Sans TC',system-ui,sans-serif;color:#66766b}.preview{display:flex;flex-direction:column;align-items:center;gap:12px}.preview canvas{display:block;width:min(100%,540px);height:auto;background:#fcf9f5;box-shadow:0 9px 30px #0002}.preview .hint{text-align:center}.section{border-top:1px solid #e2e8df;margin-top:16px;padding-top:6px}.hide{display:none!important}.tabs button:focus-visible,.btn:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--green);outline-offset:2px}@media(max-width:850px){.layout{grid-template-columns:1fr}.panel{max-height:none}.preview canvas{width:min(100%,480px)}.field input,.field textarea,.field select{font-size:16px}}
+:root{--green:#103f2a;--cream:#fcf9f5;--gold:#ffe67a}*{box-sizing:border-box}body{margin:0;background:#eef0ec;color:var(--green);font-family:Inter,'Noto Sans TC',system-ui,sans-serif}header{background:#103f2a;color:white;padding:16px clamp(16px,4vw,42px);display:flex;justify-content:space-between;align-items:center;gap:12px}header strong{font:700 27px Inter,'Noto Sans TC',system-ui,sans-serif}header small{font:12px Inter,'Noto Sans TC',system-ui,sans-serif;opacity:.8}.layout{display:grid;grid-template-columns:minmax(310px,430px) minmax(0,1fr);gap:26px;max-width:1420px;margin:24px auto;padding:0 18px}.panel{background:white;border-radius:16px;padding:16px 20px;box-shadow:0 4px 25px #123e2910;overflow-y:auto;align-self:start;position:sticky;top:90px;max-height:calc(100dvh - 120px)}.panel h2{font-size:17px;margin:14px 0 8px}.tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:12px}.tabs button{font-size:12px;padding:10px 6px;min-height:49px;line-height:1.35;overflow-wrap:break-word}.preview canvas{touch-action:pan-y}.btn,button{border:1px solid #b8c7ba;background:white;color:var(--green);border-radius:9px;padding:10px 12px;cursor:pointer;font:600 13px/1.35 Inter,'Noto Sans TC',system-ui,sans-serif}button.active,.primary{background:var(--green);color:white;border-color:var(--green)}.primary{width:100%;margin-top:14px;font-size:15px}.field{display:flex;flex-direction:column;gap:5px;margin:10px 0;font-size:13px}.field input,.field textarea,.field select{width:100%;padding:9px 10px;border:1px solid #c9d5ca;border-radius:7px;font:14px Inter,'Noto Sans TC',system-ui,sans-serif;color:#173e2a;background:#fff}.field textarea{min-height:72px;resize:vertical}.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}.checks{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}.checks label{text-align:center;font-size:12px}.checks input{display:block;margin:5px auto;accent-color:var(--green);width:17px;height:17px}.checkrow{display:flex;align-items:center;gap:8px;font-size:13px;margin:8px 0}.checkrow input{accent-color:var(--green);width:18px;height:18px}.hint{font:12px/1.65 Inter,'Noto Sans TC',system-ui,sans-serif;color:#66766b}.preview{display:flex;flex-direction:column;align-items:center;gap:12px}.preview canvas{display:block;width:min(100%,540px);height:auto;background:#fcf9f5;box-shadow:0 9px 30px #0002}.preview .hint{text-align:center}.section{border-top:1px solid #e2e8df;margin-top:16px;padding-top:6px}.hide{display:none!important}.tabs button:focus-visible,.btn:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--green);outline-offset:2px}@media(max-width:850px){.layout{grid-template-columns:1fr}.panel{max-height:none}.preview canvas{width:min(100%,480px)}.field input,.field textarea,.field select{font-size:16px}}
 
 /* Phase 1.5 — Weekly workspace; Daily renderer remains untouched */
 .intro{font-size:12px;line-height:1.65;color:#55725e;margin:9px 0 15px}
@@ -32,7 +32,7 @@
 .preview [id="card"].photo-draggable{touch-action:none;cursor:grab}
 .preview [id="card"].photo-draggable:active{cursor:grabbing}
 #saveWeeklyBoth{margin-top:8px;width:100%}
-@media(max-width:560px){.panel{padding:14px}.layout{padding:0 10px;gap:18px}.activity-row .activity-fields{grid-template-columns:1fr 1fr}.tabs button{font-size:11px}}
+@media(max-width:560px){.panel{padding:12px}.layout{padding:0 10px;gap:18px}.activity-row .activity-fields{grid-template-columns:1fr 1fr}.tabs button{font-size:11px}}
 
 
 /* Phase 2 — Challenge Calendar UI. Card visual refinements VIS-001–004 are deferred. */
@@ -146,8 +146,9 @@
 .photo-tools .field{color:var(--green)}
 
 /* Phase 5 — Studio workflow. The accepted Phase 4 card rendering remains unchanged. */
-.p5-status{display:flex;align-items:center;gap:9px;flex-wrap:wrap;background:#f0f5ef;border-radius:9px;padding:9px;margin:12px 0;font-size:12px}.p5-status span{flex:1;min-width:155px}.p5-status span[data-kind=error]{color:#a1372f;font-weight:700}.p5-status button{padding:6px 9px;font-size:11px}.p5-notice-inline{padding:10px;background:#fff8df;border-radius:9px;font:12px/1.6 Inter,sans-serif;margin:8px 0}.p5-nav{display:none;align-items:center;gap:7px;flex-wrap:wrap;background:#f6f8f4;padding:9px;margin-bottom:8px;border-radius:9px;font-size:12px}.p5-nav button{padding:7px;font-size:11px}.p5-nav span{flex:1;min-width:120px;text-align:center}.p5-nav select{padding:7px;background:white;border:1px solid #b8c7ba;border-radius:6px}.p5-toolbar{display:flex;gap:7px;margin:8px 0}.p5-toolbar button{padding:7px 12px}.p5-toolbar button:disabled{opacity:.35;cursor:default}body[data-p5-mode=daily] #p5DailyNav,body[data-p5-mode=review] #p5ReviewNav,body[data-p5-mode=plan] #p5PlanNav{display:flex}#p5ZoomToolbar{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;margin:0 0 10px}#p5ZoomToolbar button{font-size:11px;padding:7px}#p5PreviewStage{width:100%}#p5CanvasGroup{width:100%}#p5ExportStatus{font-size:12px;line-height:1.65;margin:10px 0}#p5ExportStatus[data-kind=error]{padding:10px;color:#9b3429;background:#fff2e9;border-radius:9px}#p5ExportStatus button,.p5ExportRow button{margin:4px 7px 4px 0;padding:7px;font-size:11px}.p5ExportRow{border-bottom:1px solid #dae6d8;padding:7px}.p5-notice-overlay[hidden],.p5-blocker[hidden]{display:none!important}.p5-notice-overlay,.p5-blocker{position:fixed;inset:0;z-index:1000;background:#0c281dcc;display:flex;align-items:center;justify-content:center;padding:18px;color:white}.p5-dialog{max-width:470px;width:100%;background:#fcf9f5;color:#103f2a;padding:25px;border-radius:14px;box-shadow:0 20px 40px #0004}.p5-dialog h2{font:700 23px Inter,sans-serif}.p5-dialog p{font-size:14px;line-height:1.8}.p5-view-toggle{display:none;gap:10px;padding:9px 16px;background:#f0f3ec}.p5-view-toggle button{flex:1}.p5-view-toggle button.active{background:#103f2a;color:#fff}
-@media(max-width:800px){.p5-view-toggle{display:flex}body[data-p5-view=edit] #previewPanel{display:none}body[data-p5-view=preview] #editorPanel{display:none}.layout{display:block;max-width:650px;margin:0 auto;padding:10px}.panel{max-height:none}.preview{padding:12px 0}#p5PreviewStage{}#p5CanvasGroup{max-width:540px;margin:0 auto}}
+.p5-action-row{display:flex;align-items:center;gap:8px;margin:8px 0}.p5-action-row .p5-toolbar{margin:0;flex-shrink:0}.p5-action-row .p5-status{margin:0;flex:1}.p5-status{display:flex;align-items:center;gap:9px;background:#f0f5ef;border-radius:9px;padding:9px;margin:12px 0;font-size:12px}.p5-status span{flex:1}.p5-status span[data-kind=error]{color:#a1372f;font-weight:700}.p5-status button{padding:6px 9px;font-size:11px}.p5-notice-inline{padding:10px;background:#fff8df;border-radius:9px;font:12px/1.6 Inter,sans-serif;margin:8px 0}.p5-nav{display:none;align-items:center;gap:7px;flex-wrap:wrap;background:#f6f8f4;padding:9px;margin-bottom:8px;border-radius:9px;font-size:12px}.p5-nav button{padding:7px;font-size:11px}.p5-nav button.active{background:#103f2a;color:#fff;border-color:#103f2a}#p5DayNum{flex:0 0 auto;white-space:nowrap;text-align:left;color:#58705d}.p5-nav span{flex:1;text-align:center}.p5-nav select{padding:7px;background:white;border:1px solid #b8c7ba;border-radius:6px}.p5-nav-date{padding:7px;background:white;border:1px solid #b8c7ba;border-radius:6px;font-size:12px;font-family:inherit}.p5-toolbar{display:flex;gap:7px;margin:8px 0}.p5-toolbar button{padding:7px 12px}.p5-toolbar button:disabled{opacity:.35;cursor:default}body[data-p5-mode=daily] #p5DailyNav,body[data-p5-mode=review] #p5ReviewNav,body[data-p5-mode=plan] #p5PlanNav{display:flex}#p5ZoomToolbar{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;margin:0 0 10px}#p5ZoomToolbar button{font-size:11px;padding:7px}#p5PreviewStage{width:100%}#p5CanvasGroup{width:100%}#p5ExportStatus{font-size:12px;line-height:1.65;margin:10px 0}#p5ExportStatus[data-kind=error]{padding:10px;color:#9b3429;background:#fff2e9;border-radius:9px}#p5ExportStatus button,.p5ExportRow button{margin:4px 7px 4px 0;padding:7px;font-size:11px}.p5ExportRow{border-bottom:1px solid #dae6d8;padding:7px}.p5-notice-overlay[hidden],.p5-blocker[hidden]{display:none!important}.p5-notice-overlay,.p5-blocker{position:fixed;inset:0;z-index:1000;background:#0c281dcc;display:flex;align-items:center;justify-content:center;padding:18px;color:white}.p5-dialog{max-width:470px;width:100%;background:#fcf9f5;color:#103f2a;padding:25px;border-radius:14px;box-shadow:0 20px 40px #0004}.p5-dialog h2{font:700 23px Inter,sans-serif}.p5-dialog p{font-size:14px;line-height:1.8}.p5-view-toggle{display:none;gap:10px;padding:9px 16px;background:#f0f3ec}.p5-view-toggle button{flex:1}.p5-view-toggle button.active{background:#103f2a;color:#fff}
+@media(max-width:800px){.p5-view-toggle{display:flex}body[data-p5-view=edit] #previewPanel{display:none}body[data-p5-view=preview] #editorPanel{display:none}.layout{display:block;max-width:650px;margin:0 auto;padding:10px}.panel{max-height:none}.preview{padding:12px 0}#p5PreviewStage{}#p5CanvasGroup{max-width:540px;margin:0 auto}.v55-day-bar{margin-bottom:12px}}
+
 
 /* v5.5 — clear separation of app settings, card selection and editor. */
 .v55-app-header{min-height:82px}
@@ -155,8 +156,7 @@
 .v55-app-header .v55-version{font-size:15px;font-weight:500;white-space:nowrap}
 .v55-settings-trigger{display:inline-flex;align-items:center;gap:9px;border:1px solid #ffffff76;background:#ffffff14;color:#fff;border-radius:9px;padding:11px 14px;white-space:nowrap}
 .v55-settings-trigger:hover{background:#ffffff28}
-.v55-workspace-bar{background:#fff;border-bottom:1px solid #dbe4da;position:sticky;top:0;z-index:100}
-.v55-workspace-inner{max-width:1420px;margin:auto;padding:16px 18px 0}
+.v55-workspace-bar{background:#fff;border-bottom:1px solid #dbe4da;position:sticky;top:0;z-index:100}.v55-day-bar{grid-column:1/-1;background:white;border-radius:16px;padding:16px 20px;box-shadow:0 4px 25px #123e2910;display:flex;align-items:center;gap:16px;flex-wrap:wrap}.v55-day-bar .p5-nav{flex:1;min-width:0;background:transparent;padding:0;margin:0;border-radius:0}.v55-workspace-inner{max-width:1420px;margin:auto;padding:16px 18px 0}
 .v55-workspace-label{font-size:11px;color:#6d806e;letter-spacing:.07em;margin-bottom:9px;font-weight:650}
 .v55-card-tabs{display:flex;gap:5px;margin:0;max-width:650px}
 .v55-card-tabs button{flex:1;min-height:43px;border:1px solid transparent;border-bottom:3px solid transparent;background:transparent;color:#58705d;border-radius:8px 8px 0 0;padding:9px 10px;font-size:14px}
@@ -191,8 +191,6 @@
 .v55-settings-dialog.v55-onboarding .v55-settings-header{background:#f7faf4}
 
 /* v5.6: display-only Nourish preference and local-first backup controls. */
-.p56-display-mode{margin:13px 0 6px;padding:12px 13px;border:1px solid #dfe8dc;border-radius:10px;background:#f7faf5}
-.p56-display-mode .field{margin:0}.p56-display-mode .hint{margin:7px 0 0}
 .p56-backup{margin:10px 0 16px;padding:14px;border:1px solid #dbe7d9;border-radius:12px;background:#fbfcfa}
 .p56-backup summary{cursor:pointer;font-size:15px;font-weight:700}
 .p56-backup .p56-backup-actions{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}
@@ -219,9 +217,10 @@
 .v56-changelog .v56-release-title{color:#173f2b;font-size:13px;line-height:1.6;margin:0 0 5px;font-weight:700}
 .v56-changelog .v56-release p:last-child{margin-bottom:0}
 
+@media(max-width:600px){.v55-day-bar{padding:12px;gap:6px;border-radius:10px;margin-bottom:12px}.v55-day-bar .p5-nav{gap:6px}.p5-nav-date{flex:1;min-width:0}.btn-txt{display:none}.p5-nav button{padding:8px 11px;white-space:nowrap}.day-denom{display:none}.panel{padding:12px}}
 </style></head><body>
 <header class="v55-app-header">
-  <div class="v55-brand"><strong>Omi Card Studio <span class="v55-version" data-omi-version>v5.6</span></strong><small>One Must Imagine · 84 Days of Deliberate Living</small></div>
+  <div class="v55-brand"><strong>Omi Card Studio <span class="v55-version" data-omi-version>v5.7</span></strong><small>One Must Imagine · 84 Days of Deliberate Living</small></div>
   <button type="button" id="v55OpenSettings" class="v55-settings-trigger" aria-haspopup="dialog" aria-controls="v55SettingsDialog" aria-label="開啟挑戰設定"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a2 2 0 0 1 2 1.4l.4 1.3a7 7 0 0 1 1.6.9l1.3-.3a2 2 0 0 1 2.2 1l1.2 2a2 2 0 0 1-.4 2.4l-1 .9a7 7 0 0 1 0 1.8l1 .9a2 2 0 0 1 .4 2.4l-1.2 2a2 2 0 0 1-2.2 1l-1.3-.3a7 7 0 0 1-1.6.9l-.4 1.3a2 2 0 0 1-2 1.4h-2a2 2 0 0 1-2-1.4l-.4-1.3a7 7 0 0 1-1.6-.9l-1.3.3a2 2 0 0 1-2.2-1l-1.2-2a2 2 0 0 1 .4-2.4l1-.9a7 7 0 0 1 0-1.8l-1-.9a2 2 0 0 1-.4-2.4l1.2-2a2 2 0 0 1 2.2-1l1.3.3a7 7 0 0 1 1.6-.9l.4-1.3a2 2 0 0 1 2-1.4z"/><circle cx="12" cy="13" r="2.5"/></svg><span>挑戰設定</span></button>
 </header>
 <div class="v55-workspace-bar">
@@ -314,6 +313,13 @@
     </details>
 
 
+    <details class="p3-setup" id="p56DisplayPrefs">
+      <summary><span class="setup-heading"><strong>顯示偏好</strong><small class="hint">小卡呈現方式</small></span></summary>
+      <label class="field" for="p56NourishDisplayMode">Nourish 小卡顯示方式<select id="p56NourishDisplayMode"><option value="numbers">實際數值／目標</option><option value="percentage" selected>實際達成百分比（預設）</option></select></label><p class="hint">僅切換蛋白質與白開水的顯示方式；百分比不設上限。紀錄數值、目標與 Checkbox 不受影響。</p>
+      <label class="checkrow"><input type="checkbox" id="p56ShowSleepTime" checked>顯示排定入睡的時間</label>
+      <label class="checkrow"><input type="checkbox" id="p56ShowBook" checked>顯示目前閱讀的書</label>
+    </details>
+
     <details class="p56-backup" id="p56BackupPanel">
       <summary>資料備份與還原</summary>
       <p class="intro">所有編輯紀錄、挑戰設定、目標調整歷史及上傳的照片，都可以匯出為 JSON 備份檔；可在另一台手機或電腦匯入。備份檔包含個人生活紀錄，請妥善保管。</p>
@@ -332,10 +338,14 @@
       <details class="v55-help"><summary><span>使用說明</span><span class="v55-arrow" aria-hidden="true"></span></summary>
         <div class="v55-help-body"><p><strong>設定挑戰：</strong>先確認挑戰日期與個人承諾；挑戰開始後部分設定會鎖定。</p><p><strong>選擇小卡：</strong>在「每日打卡」、「每週回顧」、「每週計畫」之間切換。</p><p><strong>編輯與預覽：</strong>填寫內容後即時查看小卡；手機版可以在「編輯／預覽」間切換。</p><p><strong>儲存與匯出：</strong>編輯內容會自動儲存在目前瀏覽器，完成後可匯出 PNG。</p><p class="v55-help-warning">注意：本機自動儲存並非雲端備份。清除網站資料或更換裝置可能使紀錄遺失；PNG 無法還原編輯資料。</p></div>
       </details>
-      <details class="v55-help"><summary><span>版本資訊 <span data-omi-version>v5.6</span></span><span class="v55-arrow" aria-hidden="true"></span></summary>
+      <details class="v55-help"><summary><span>版本資訊 <span data-omi-version>v5.7</span></span><span class="v55-arrow" aria-hidden="true"></span></summary>
         <div class="v55-help-body v56-changelog">
           <section class="v56-release" aria-label="最新版本">
-            <p class="v56-release-title" data-omi-release-heading>Omi Card Studio v5.6</p>
+            <p class="v56-release-title" data-omi-release-heading>Omi Card Studio v5.7</p>
+            <p>導覽列日期改為可直接點選的 date input，並在瀏覽當天或本週時 highlight 對應按鈕；手機版 Prev／Next 改顯示箭頭符號，今天與本週保留文字，統一各容器內距並修正平板間距。Undo Bar 與 Status Bar 合併為同一行。Nourish 提示合併為單行顯示，Fruit & Vegetables 勾選邏輯修正（水果未填視為 0）。顯示偏好移入挑戰設定，新增「顯示排定入睡時間」與「顯示目前閱讀的書」開關，並將百分比模式設為預設。</p>
+          </section>
+          <section class="v56-release" aria-label="v5.6 更新紀錄">
+            <p class="v56-release-title">Omi Card Studio v5.6</p>
             <p>新增 Nourish 數值／百分比顯示切換、跨裝置 JSON 備份與還原，並調整 Weekly Plan 的區塊間距、筆記內距及活動名稱對齊；優化下拉選單箭頭的留白與版本歷史顯示。本次配色更新統一小卡主背景 #FCF9F5、內容色塊 #ECECE3、深綠文字 #103F2A 與黃色裝飾 #FFE47C，並換上新版山景 Footer；編輯器介面配色不變。</p>
           </section>
           <section class="v56-release" aria-label="v5.5 更新紀錄">
@@ -360,21 +370,25 @@
   </div>
 </dialog>
 <main class="layout">
+  <div class="v55-day-bar">
+    <div id="p5ReviewNav" class="p5-nav"><label>Week <select id="p5ReflectWeek"><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select></label><button type="button" id="p5ReflectPrev">← <span class="btn-txt">上一週</span></button><button type="button" id="p5ReflectNext"><span class="btn-txt">下一週</span> →</button><button type="button" id="p5ReflectCurrent">本週</button></div>
+    <div id="p5DailyNav" class="p5-nav"><span id="p5DayNum"></span><input data-key="date" type="date" class="p5-nav-date"/><button type="button" id="p5DayPrev">← <span class="btn-txt">前一天</span></button><button type="button" id="p5DayNext"><span class="btn-txt">後一天</span> →</button><button type="button" id="p5Today">今天</button></div>
+    <div id="p5PlanNav" class="p5-nav"><label>Week <select id="p5PlanWeek"><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select></label><button type="button" id="p5PlanPrev">← <span class="btn-txt">上一週</span></button><button type="button" id="p5PlanNext"><span class="btn-txt">下一週</span> →</button><button type="button" id="p5PlanCurrent">本週</button></div>
+    <input data-key="day" max="84" min="1" type="number" value="24" hidden/>
+  </div>
   <section class="panel" id="editorPanel">
 
-    <div id="p5StatusBar" class="p5-status"><span id="p5SaveStatus" role="status" aria-live="polite">正在初始化…</span><button type="button" id="p5Retry" hidden>重試儲存</button><button type="button" id="p5Info">本機資料說明</button></div>
+    <div class="p5-action-row">
+      <div id="p5UndoBar" class="p5-toolbar"><button type="button" id="p5Undo" disabled>↶ 復原</button><button type="button" id="p5Redo" disabled>↷ 重做</button></div>
+      <div id="p5StatusBar" class="p5-status"><span id="p5SaveStatus" role="status" aria-live="polite">正在初始化…</span><button type="button" id="p5Retry" hidden>重試儲存</button><button type="button" id="p5Info">本機資料說明</button></div>
+    </div>
     <div id="p5InfoPanel" class="p5-notice-inline" hidden>編輯內容和照片預設只儲存在目前瀏覽器，不會自動同步。可在「挑戰設定 → 資料備份與還原」匯出 JSON 備份，並在其他裝置還原；PNG 圖片不能還原編輯資料。</div>
-    <div id="p5DailyNav" class="p5-nav"><button type="button" id="p5DayPrev">← 前一天</button><span id="p5DailyLabel"></span><button type="button" id="p5DayNext">後一天 →</button><button type="button" id="p5Today">今天</button></div>
-    <div id="p5ReviewNav" class="p5-nav"><button type="button" id="p5ReflectPrev">← 上一週</button><label>Week <select id="p5ReflectWeek"><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select></label><button type="button" id="p5ReflectNext">下一週 →</button><button type="button" id="p5ReflectCurrent">Current Week</button></div>
-    <div id="p5PlanNav" class="p5-nav"><button type="button" id="p5PlanPrev">← 上一週</button><label>Week <select id="p5PlanWeek"><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select></label><button type="button" id="p5PlanNext">下一週 →</button><button type="button" id="p5PlanCurrent">Current Week</button></div>
-    <div id="p5UndoBar" class="p5-toolbar"><button type="button" id="p5Undo" disabled>↶ 復原</button><button type="button" id="p5Redo" disabled>↷ 重做</button></div>
-    <div id="dailyForm"><h2>日期與挑戰進度</h2><div class="pair"><label class="field">Day（1–84）<input data-key="day" max="84" min="1" type="number" value="24"/></label><label class="field">日期<input data-key="date" type="date"/></label></div><div id="dailyCalendarStatus" class="calendar-hint" role="status"></div><div class="section"><h2>MOVE｜本週進度</h2><div class="pair"><label class="field">今日有氧（分鐘）<input data-key="aerobicToday" min="0" type="number" value="0"/></label><label class="field">今日肌力訓練（次）<input data-key="strengthToday" min="0" type="number" value="0"/></label></div><div class="hint">填入今日的有氧分鐘與肌力訓練次數，系統自動累積本週進度。每週目標：有氧 150 分鐘、肌力 2 次。</div><div class="field">本週執行日期</div><div class="checks" id="moveDays"></div></div><div class="section"><h2>NOURISH｜滋養</h2>
+    <div id="dailyForm"><div class="section"><h2>MOVE｜運動</h2><p class="hint">填入今日的有氧分鐘與肌力訓練次數，系統自動累積本週進度。每週目標：有氧 150 分鐘、肌力 2 次。</p><div class="pair"><label class="field">今日有氧（分鐘）<input data-key="aerobicToday" min="0" type="number" value="0"/></label><label class="field">今日肌力訓練（次）<input data-key="strengthToday" min="0" type="number" value="0"/></label></div><div class="field">本週執行日期</div><div class="checks" id="moveDays"></div></div><div class="section"><h2>NOURISH｜滋養</h2>
       <p id="p3DailyHint" class="hint">請先確認 Commitment Setup。</p>
       <p id="p3TargetDateHint" class="hint" aria-live="polite"></p>
-      <label class="checkrow"><input id="p3Alcohol" type="checkbox">今日未飲酒</label>
-      <p class="hint">未勾選代表今日有飲酒。</p>
+      <label class="checkrow"><input id="p3Alcohol" type="checkbox">今日未飲酒 <span class="hint"> (未勾選代表今日有飲酒)</span></label>
       <div id="p3DailyGroup_fruit_vegetables" class="hide">
-        <p class="hint">Fruit &amp; Vegetables · 每份約為一手掌捧起的量（1 handful）</p>
+
         <div class="pair">
           <label class="field">蔬菜（份）<input id="p3Vegetables" type="number" min="0" step="0.5" placeholder="未記錄"></label>
           <label class="field">水果（份）<input id="p3Fruit" type="number" min="0" step="0.5" placeholder="未記錄"></label>
@@ -383,7 +397,6 @@
       <div id="p3DailyGroup_protein" class="hide"><label class="field">Protein · 今日蛋白質攝取（g）<input id="p3Protein" type="number" min="0" step="0.1" placeholder="未記錄"></label></div>
       <div id="p3DailyGroup_hydration" class="hide"><label class="field">Hydration · 今日白開水（ml）<input id="p3Water" type="number" min="0" step="1" placeholder="未記錄"></label></div>
       <div id="p3DailyError" class="calendar-hint error" role="status"></div>
-      <div class="p56-display-mode"><label class="field" for="p56NourishDisplayMode">Nourish 小卡顯示方式<select id="p56NourishDisplayMode"><option value="numbers">實際數值／目標（預設）</option><option value="percentage">實際達成百分比</option></select></label><p class="hint">僅切換蛋白質與白開水的顯示方式；百分比不設上限。紀錄數值、目標與 Checkbox 不受影響。</p></div>
       </div><div class="section"><h2>LEARN｜求知</h2><label class="field">今天閱讀的書<input data-key="book" placeholder="今天閱讀的書"/></label><label class="field">閱讀／聆聽（分鐘）<input data-key="reading" min="0" type="number" value="0"/></label></div><div class="section"><h2>RECOVER｜恢復</h2><div class="pair"><label class="field">預定入睡時間<input data-key="sleepStart" type="time" value="22:00" readonly/></label><label class="field">預定起床時間<input data-key="sleepEnd" type="time" value="06:00" readonly/></label></div><label class="checkrow"><input data-key="sleepOpportunity" type="checkbox"/>達成 8 小時睡眠機會</label><label class="checkrow"><input data-key="bedRegular" type="checkbox"/>入睡時間符合 ±60 分鐘</label><label class="checkrow"><input data-key="wakeRegular" type="checkbox"/>起床時間符合 ±60 分鐘</label></div><div class="section"><h2>REFLECT｜反思</h2><label class="field">今日的一個觀察<textarea data-key="reflection" maxlength="180" placeholder="寫下一個今天注意到的事情"></textarea></label></div></div>
     <div id="reviewForm" class="hide">
       <h2>Weekly Reflect · The Story</h2>
@@ -456,7 +469,7 @@
     </div></div><div class="hint">即時預覽 · PNG 使用同一個 Canvas。字體未備妥時會提示，避免輸出錯誤字形。</div><div id="omiFontStatus" class="status warning" role="status" aria-live="polite">正在檢查 Omi 字體…</div><button type="button" id="omiRetryFont" class="btn" style="display:none">重新載入字體</button>
   </section>
 </main><div id="p5Blocker" class="p5-blocker" role="alert">正在安全載入本機資料…</div><div id="p5FirstNotice" class="p5-notice-overlay" hidden><div class="p5-dialog" role="dialog" aria-modal="true" aria-labelledby="p5NoticeTitle"><h2 id="p5NoticeTitle">小卡資料儲存在這台裝置上</h2><p>Challenge 設定、小卡編輯內容與照片預設只保存在目前瀏覽器，不會自動同步。清除網站資料、使用無痕模式或更換裝置，可能使這些內容無法恢復。</p><p>請定期從「挑戰設定 → 資料備份與還原」匯出 JSON 備份。PNG 是圖片，無法還原編輯內容。</p><button type="button" class="primary" id="p5NoticeOk">我了解，開始使用</button></div></div><script>
-const OMI_APP_VERSION='5.6';
+const OMI_APP_VERSION='5.7';
 document.title=`Omi Card Studio v${OMI_APP_VERSION}`;
 document.querySelectorAll('[data-omi-version]').forEach(node=>{node.textContent=`v${OMI_APP_VERSION}`;});
 const omiReleaseHeading=document.querySelector('[data-omi-release-heading]');
@@ -541,8 +554,8 @@ function sleepDuration(){let a=state.sleepStart||'22:00',b=state.sleepEnd||'06:0
 // v5.6 — display-only Nourish preference; defaults to the existing numeric layout.
 const OmiNourishDisplay=(()=>{
   const KEY='omi-card-studio-v5.6.nourish-display';
-  let current='numbers';
-  try{if(localStorage.getItem(KEY)==='percentage')current='percentage';}catch(e){}
+  let current='percentage';
+  try{const saved=localStorage.getItem(KEY);if(saved==='numbers'||saved==='percentage')current=saved;}catch(e){}
   const select=document.getElementById('p56NourishDisplayMode');
   select.value=current;
   select.addEventListener('change',()=>{
@@ -563,6 +576,19 @@ const OmiNourishDisplay=(()=>{
       return `${Number(percent.toFixed(1))}%`;
     }
   };
+})();
+
+const OmiCardDisplay=(()=>{
+  const cfg={showSleep:true,showBook:true};
+  const KEYS={showSleep:'omi-display-show-sleep',showBook:'omi-display-show-book'};
+  const IDS={showSleep:'p56ShowSleepTime',showBook:'p56ShowBook'};
+  for(const k of Object.keys(cfg)){
+    try{const v=localStorage.getItem(KEYS[k]);if(v==='0')cfg[k]=false;}catch(e){}
+    const el=document.getElementById(IDS[k]);
+    el.checked=cfg[k];
+    el.addEventListener('change',()=>{cfg[k]=el.checked;try{localStorage.setItem(KEYS[k],el.checked?'1':'0');}catch(e){}refresh();});
+  }
+  return{get showSleep(){return cfg.showSleep;},get showBook(){return cfg.showBook;}};
 })();
 
 function daily(){canvas.width=1080;canvas.height=1920;ctx.setTransform(1080/941,0,0,1920/1670,0,0);background(941,1670,1412);topHeader(941);const cardDay=ChallengeCalendar.setup?.days.find(d=>d.date===state.date);const cardWeek=cardDay?(cardDay.isPrepDay?'PREP DAY':`WEEK ${String(cardDay.weekNumber).padStart(2,'0')}`):'WEEK —';text(`DAY ${state.day||''}   ·   ${cardWeek}   ·   ${dateString(state.date)}（${weekday(state.date)}）`,470,287,31,{bold:true,align:'center'});
@@ -586,8 +612,8 @@ nourishmentRows.forEach((r,i)=>{
   checkbox(806,y-29,nourish.statuses[r.kind]==='met',32);
   if(i<nourishmentRows.length-1)line(70,y+18,864,y+18,.6);
 });
-heading('LEARN',914);text('閱讀',87,977,27,{cn:true});wrap(state.book||'',252,974,360,29,1,22);text(`${state.reading||0} 分鐘`,759,977,24,{cn:true,align:'right'});checkbox(802,948,(+state.reading||0)>=20,37);
-heading('RECOVER',1053);text('睡眠機會',87,1115,27,{cn:true});text(`${state.sleepStart||'22:00'} – ${state.sleepEnd||'06:00'}（${sleepDuration()}）`,746,1115,23,{cn:true,align:'right'});checkbox(802,1085,!!state.sleepOpportunity,37);line(70,1138,864,1138,.6);text('睡眠規律',87,1191,27,{cn:true});text('入睡 ±60 分鐘',338,1191,21,{cn:true});checkbox(514,1163,!!state.bedRegular,35);text('起床 ±60 分鐘',614,1191,21,{cn:true});checkbox(802,1163,!!state.wakeRegular,35);
+heading('LEARN',914);text('閱讀',87,977,27,{cn:true});if(OmiCardDisplay.showBook)wrap(state.book||'',252,974,360,29,1,22);text(`${state.reading||0} 分鐘`,759,977,24,{cn:true,align:'right'});checkbox(802,948,(+state.reading||0)>=20,37);
+heading('RECOVER',1053);text('睡眠機會',87,1115,27,{cn:true});if(OmiCardDisplay.showSleep)text(`${state.sleepStart||'22:00'} – ${state.sleepEnd||'06:00'}（${sleepDuration()}）`,746,1115,23,{cn:true,align:'right'});checkbox(802,1085,!!state.sleepOpportunity,37);line(70,1138,864,1138,.6);text('睡眠規律',87,1191,27,{cn:true});text('入睡 ±60 分鐘',338,1191,21,{cn:true});checkbox(514,1163,!!state.bedRegular,35);text('起床 ±60 分鐘',614,1191,21,{cn:true});checkbox(802,1163,!!state.wakeRegular,35);
 heading('REFLECT',1263);text('今日的一個觀察',87,1318,25,{cn:true});rect(60,1340,809,87,PALE,15);wrap(state.reflection,86,1375,752,29,2,20)}
 // Phase 1.5 / Weekly-only model and renderer.
 // The Daily renderer above is preserved verbatim from the accepted Phase 1 baseline.
@@ -1196,6 +1222,7 @@ const ChallengeCalendar=(()=>{
   function showStatus(){
     for(const tab of ['daily','review','plan']){
       const el=E(tab==='daily'?'dailyCalendarStatus':tab==='review'?'reflectCalendarStatus':'planCalendarStatus');
+      if(!el)continue;
       if(!setup){
         el.className='calendar-hint';el.textContent='Challenge Setup 尚未確認；日期連動功能尚未啟用。';continue;
       }
@@ -1387,7 +1414,7 @@ const RecoverStudio=(()=>{
   let history=[];
   const valid=t=>/^([01]\d|2[0-3]):[0-5]\d$/.test(t);
   const todayISO=()=>localDate;
-  const currentDate=()=>E('dailyForm').querySelector('[data-key="date"]').value;
+  const currentDate=()=>document.querySelector('[data-key="date"]').value;
   const current=(date)=>{let result=null;for(const r of history){if(r.effectiveFrom<=date)result=r;else break;}return result;};
   function validateInitial(){const b=E('recoverInitialBed').value,w=E('recoverInitialWake').value;return valid(b)&&valid(w)&&b!==w;}
   function confirmInitial(date){
@@ -1503,7 +1530,7 @@ const NourishStudio=(()=>{
     records.set(activeDate,v);
   }
   function onDayChanged(){
-    const date=E('dailyForm').querySelector('[data-key="date"]').value;
+    const date=document.querySelector('[data-key="date"]').value;
     if(date===activeDate)return;
     activeDate=date;loadRecord(date);paint();
   }
@@ -1548,7 +1575,7 @@ const NourishStudio=(()=>{
     confirmed=true;
     RecoverStudio.confirmInitial(calendar.challengeStartDate);
     notice=isStarted()?'首次設定完成。此 Challenge 已開始，選定項目立即鎖定；若此前已有紙本紀錄，請自行核對。':'設定已確認，Day 1 前仍可調整選擇。';
-    activeDate=E('dailyForm').querySelector('[data-key="date"]').value;
+    activeDate=document.querySelector('[data-key="date"]').value;
     loadRecord(activeDate);paint();refresh();OmiSetupStorage.write();
     E('p3RevisionPanel').open=false;
     E('p3NourishSetup').open=false;
@@ -1565,8 +1592,9 @@ const NourishStudio=(()=>{
     if(kind!=='alcohol'&&!setup.selectedCommitments.includes(kind))return 'unselected';
     if(kind==='alcohol')return record.alcoholConsumed===false?'met':'not_met';
     if(kind==='fruit_vegetables'){
-      if(record.vegetableServings===null||record.fruitServings===null||!Number.isFinite(record.vegetableServings)||!Number.isFinite(record.fruitServings))return 'not_recorded';
-      return record.vegetableServings>=3&&record.vegetableServings+record.fruitServings>=5?'met':'not_met';
+      if(record.vegetableServings===null||!Number.isFinite(record.vegetableServings))return 'not_recorded';
+      const fruit=Number.isFinite(record.fruitServings)?record.fruitServings:0;
+      return record.vegetableServings>=3&&record.vegetableServings+fruit>=5?'met':'not_met';
     }
     const target=getEffectiveTarget(kind,date);
     const actual=kind==='protein'?record.proteinGrams:record.plainWaterMl;
@@ -1580,7 +1608,7 @@ const NourishStudio=(()=>{
     const f=fields;records.set(date,{date,alcoholConsumed:!f.alcohol,vegetableServings:f.vegetable===''?null:Number(f.vegetable),fruitServings:f.fruit===''?null:Number(f.fruit),proteinGrams:f.protein===''?null:Number(f.protein),plainWaterMl:f.water===''?null:Number(f.water)});
   }
   function currentDaily(){
-    const date=exportOverride?.date||E('dailyForm').querySelector('[data-key="date"]').value;
+    const date=exportOverride?.date||document.querySelector('[data-key="date"]').value;
     const record=exportOverride?{date,alcoholConsumed:!exportOverride.alcohol,vegetableServings:exportOverride.vegetable===''?null:Number(exportOverride.vegetable),fruitServings:exportOverride.fruit===''?null:Number(exportOverride.fruit),proteinGrams:exportOverride.protein===''?null:Number(exportOverride.protein),plainWaterMl:exportOverride.water===''?null:Number(exportOverride.water)}:activeDate===date?rawAsRecord(date):records.get(date)||emptyRecord(date);
     return {date,record,selected:[...setup.selectedCommitments],confirmed,statuses:Object.fromEntries(['alcohol',...commitments].map(k=>[k,getStatus(k,record,date)])),targets:{protein:getEffectiveTarget('protein',date),hydration:getEffectiveTarget('hydration',date)}};
   }
@@ -1658,19 +1686,22 @@ const NourishStudio=(()=>{
     E('p3LockNotice').textContent=!confirmed?'開始前請至少選兩項；開始後不可更改選擇。':locked?'已開始的 Challenge：Commitments 鎖定；可依下方政策修改數值目標。':'Day 1 前仍可調整所選 Commitments 與初始目標。';
     E('p3SetupNotice').textContent=notice;
     E('p3SetupNotice').className='calendar-hint '+(notice.includes('請')||notice.includes('不能')||notice.includes('必須')||notice.includes('無法')||notice.includes('移除')?'warning':'success');
-    E('p3DailyHint').textContent=!confirmed?'請先確認 Commitment Setup，才會在小卡顯示官方 Nourish 紀錄。':`已選 ${setup.selectedCommitments.map(x=>labels[x]).join('、')}；未勾選「今日未飲酒」代表有飲酒，其他空白欄位代表未記錄。`;
-    const cardDate=E('dailyForm').querySelector('[data-key="date"]').value;
+    const cardDate=document.querySelector('[data-key="date"]').value;
     const targetInfo=[];
-    if(confirmed&&cardDate){
-      for(const kind of ['protein','hydration']){
-        if(!setup.selectedCommitments.includes(kind))continue;
-        const revisions=kind==='protein'?setup.proteinTargets:setup.hydrationTargets;
-        const current=getEffectiveTarget(kind,cardDate);
-        const next=revisions.find(r=>r.effectiveFrom>cardDate);
-        targetInfo.push(`${labels[kind]}：${current??'—'} ${kind==='protein'?'g':'ml'}${next?`（${next.effectiveFrom} 起調整為 ${next.target}）`:''}`);
+    if(confirmed){
+      if(setup.selectedCommitments.includes('fruit_vegetables'))targetInfo.push('Fruit & Vegetables：每份約一手掌捧起（1 handful）');
+      if(cardDate){
+        for(const kind of ['protein','hydration']){
+          if(!setup.selectedCommitments.includes(kind))continue;
+          const revisions=kind==='protein'?setup.proteinTargets:setup.hydrationTargets;
+          const current=getEffectiveTarget(kind,cardDate);
+          const next=revisions.find(r=>r.effectiveFrom>cardDate);
+          targetInfo.push(`${labels[kind]}：${current??'—'} ${kind==='protein'?'g':'ml'}${next?`（${next.effectiveFrom} 起調整為 ${next.target}）`:''}`);
+        }
       }
     }
-    E('p3TargetDateHint').textContent=confirmed&&cardDate&&targetInfo.length?`目前小卡日期 ${cardDate} 的適用目標：${targetInfo.join('；')}。新目標從儲存當天起生效，過去日期沿用當時的目標。`:'';
+    E('p3DailyHint').textContent=!confirmed?'請先確認 Commitment Setup，才會在小卡顯示官方 Nourish 紀錄。':`已選 ${setup.selectedCommitments.map(x=>labels[x]).join('、')}${targetInfo.length?`；${cardDate?`目前 ${cardDate} 適用目標：`:''}${targetInfo.join('；')}。`:''}`;
+    E('p3TargetDateHint').textContent='';
     const usable=confirmed&&calendar&&!isEnded()&&today()>=calendar.challengeStartDate;
     E('p3RevisionPanel').classList.toggle('hide',!usable);
     const choices=[...['protein','hydration'].filter(k=>setup.selectedCommitments.includes(k)),'recover'];
@@ -1727,7 +1758,7 @@ const NourishStudio=(()=>{
     E('p3InitialProtein').value=protein[0]?.target??'';
     E('p3InitialHydration').value=hydration[0]?.target??'';
     notice=removed?`已還原設定。新版不再支援預約未來目標，因此移除了 ${removed} 筆尚未生效的舊排程；請在想變更的當天重新儲存。`:'已從此瀏覽器的 Local Storage 還原 Nourish Setup。';
-    activeDate=E('dailyForm').querySelector('[data-key="date"]').value;
+    activeDate=document.querySelector('[data-key="date"]').value;
     loadRecord(activeDate);paint();refresh();
   }
   // Date changes are handled explicitly by the ChallengeCalendar hooks to avoid cross-date contamination.
@@ -1944,14 +1975,15 @@ const OmiPhase5=(()=>{
   function navUpdate(){
     const cal=ChallengeCalendar.setup;if(!cal)return;
     const day=Number(keyEl('day').value);
-    $('p5DailyLabel').textContent=Number.isInteger(day)?`Day ${day} / 84 · ${keyEl('date').value}`:'尚未選擇日期';
+    $('p5DayNum').innerHTML=Number.isInteger(day)?`Day ${day} <span class="day-denom">/ 84</span>`:'';
     $('p5DayPrev').disabled=day<=1||busy;$('p5DayNext').disabled=day>=84||busy;
     $('p5Today').disabled=!isTodayValid();
+    $('p5Today').classList.toggle('active',keyEl('date').value===localDate);
     for(const kind of ['review','plan']){
       const n=Number(keyEl((kind==='review'?'reflect':kind)+'Week').value),prefix=kind==='review'?'Reflect':'Plan';
       $("p5"+prefix+'Week').value=String(n||1);
       $("p5"+prefix+'Prev').disabled=n<=1||busy;$("p5"+prefix+'Next').disabled=n>=12||busy;
-      $("p5"+prefix+'Current').disabled=!currentWeek();
+      const cw=currentWeek();$("p5"+prefix+'Current').disabled=!cw;$("p5"+prefix+'Current').classList.toggle('active',!!cw&&n===cw);
     }
   }
   function isTodayValid(){const c=ChallengeCalendar.setup;return !!c&&localDate>=c.challengeStartDate&&localDate<=c.challengeEndDate;}
